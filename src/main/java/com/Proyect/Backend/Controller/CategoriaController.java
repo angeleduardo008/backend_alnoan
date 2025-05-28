@@ -10,6 +10,7 @@ import com.Proyect.Backend.Service.CategoriaService;
 
 @RestController
 @RequestMapping("/api/categorias")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class CategoriaController {
 
     private final CategoriaService service;
