@@ -1,6 +1,8 @@
 package com.Proyect.Backend.Controller;
 
+import com.Proyect.Backend.DTO.ResenaRequest;
 import com.Proyect.Backend.Model.resena;
+import com.Proyect.Backend.Service.ResenaServiceImpl;
 import com.Proyect.Backend.Service.ResenaService;
 
 import org.springframework.http.ResponseEntity;
@@ -15,9 +17,11 @@ import java.util.Optional;
 public class ResenaController {
 
     private final ResenaService service;
+    private final ResenaServiceImpl serviceImpl;
 
-    public ResenaController(ResenaService service) {
+    public ResenaController(ResenaService service, ResenaServiceImpl serviceImpl) {
         this.service = service;
+        this.serviceImpl = serviceImpl;
     }
 
     @GetMapping
@@ -37,9 +41,10 @@ public class ResenaController {
         return service.buscarPorProductoId(productoId);
     }
 
+    // ✅ Método para recibir DTO
     @PostMapping
-    public ResponseEntity<resena> guardar(@RequestBody resena resena) {
-        return ResponseEntity.ok(service.guardar(resena));
+    public ResponseEntity<resena> guardarDesdeDTO(@RequestBody ResenaRequest request) {
+        return ResponseEntity.ok(serviceImpl.guardarDesdeDTO(request));
     }
 
     @PutMapping("/{id}")

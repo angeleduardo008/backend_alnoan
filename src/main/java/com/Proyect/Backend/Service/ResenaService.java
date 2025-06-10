@@ -11,4 +11,5 @@ public interface ResenaService {
     List<resena> buscarPorProductoId(Long productoId);
     resena guardar(resena resena);
     void eliminar(Long id);
+    
 }

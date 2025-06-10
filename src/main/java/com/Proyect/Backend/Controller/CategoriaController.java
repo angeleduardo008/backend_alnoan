@@ -2,9 +2,7 @@ package com.Proyect.Backend.Controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.web.bind.annotation.*;
-
 import com.Proyect.Backend.Model.categorias;
 import com.Proyect.Backend.Service.CategoriaService;
 

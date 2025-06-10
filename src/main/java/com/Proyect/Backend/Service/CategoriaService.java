@@ -2,15 +2,12 @@ package com.Proyect.Backend.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import com.Proyect.Backend.Model.categorias;
 import com.Proyect.Backend.Repository.CategoriaRepository;
 
 @Service
 public class CategoriaService {
-
     private final CategoriaRepository repository;
 
     public CategoriaService(CategoriaRepository repository) {
